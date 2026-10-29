@@ -1,0 +1,103 @@
+[
+  {
+    "name": "prayer_times",
+    "description": "Islamic prayer times (salah times: Fajr, Sunrise, Dhuhr, Asr, Maghrib, Isha, plus Imsak and Midnight) for a location today. Provide either city+country or latitude+longitude. Returns timings, Gregorian and Hijri (Islamic calendar) dates, timezone, and the calculation method used.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "city": {
+          "type": "string",
+          "description": "City name, e.g. \"London\". Requires country."
+        },
+        "country": {
+          "type": "string",
+          "description": "Country name or code, e.g. \"UK\". Requires city."
+        },
+        "latitude": {
+          "type": "number",
+          "description": "Latitude in decimal degrees. Use with longitude as an alternative to city+country."
+        },
+        "longitude": {
+          "type": "number",
+          "description": "Longitude in decimal degrees. Use with latitude."
+        },
+        "method": {
+          "type": "number",
+          "description": "Prayer-time calculation method. Default 2 = ISNA (Islamic Society of North America); 3 = MWL (Muslim World League); 4 = Umm al-Qura (Makkah); and others."
+        }
+      }
+    }
+  },
+  {
+    "name": "qibla",
+    "description": "Qibla direction (compass bearing toward the Kaaba in Mecca) for a given latitude/longitude, in degrees from true north.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "latitude": {
+          "type": "number",
+          "description": "Latitude in decimal degrees."
+        },
+        "longitude": {
+          "type": "number",
+          "description": "Longitude in decimal degrees."
+        }
+      },
+      "required": [
+        "latitude",
+        "longitude"
+      ]
+    }
+  },
+  {
+    "name": "convert_to_hijri",
+    "description": "Convert a Gregorian date to the Hijri (Islamic) calendar date. Useful for Islamic calendar date conversion.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "date": {
+          "type": "string",
+          "description": "Gregorian date in DD-MM-YYYY format, e.g. \"07-06-2026\"."
+        }
+      },
+      "required": [
+        "date"
+      ]
+    }
+  },
+  {
+    "name": "hijri_calendar",
+    "description": "Monthly Islamic prayer-times calendar for a city: per-day Gregorian and Hijri (Islamic calendar) dates with salah times (Fajr, Dhuhr, Maghrib, Isha).",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "city": {
+          "type": "string",
+          "description": "City name, e.g. \"London\"."
+        },
+        "country": {
+          "type": "string",
+          "description": "Country name or code, e.g. \"UK\"."
+        },
+        "month": {
+          "type": "number",
+          "description": "Gregorian month, 1-12."
+        },
+        "year": {
+          "type": "number",
+          "description": "Gregorian year, e.g. 2026."
+        },
+        "method": {
+          "type": "number",
+          "description": "Prayer-time calculation method. Default 2 = ISNA; 3 = MWL; 4 = Umm al-Qura; and others."
+        }
+      },
+      "required": [
+        "city",
+        "country",
+        "month",
+        "year"
+      ]
+    }
+  }
+]
