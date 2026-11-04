@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-prayer-times",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Islamic prayer times & calendar MCP (Aladhan API). Keyless.",
   "type": "module",
   "main": "lib/index.js",
@@ -27,7 +27,7 @@
     "mode": "gateway",
     "slug": "prayer-times",
     "gatewaySlug": "prayer-times",
-    "sourceHash": "v1-8b08ac93b8e61bf0a5d7e242bb2217c7d902e80665835a43109e2250dbb10210",
-    "sourceCommit": "6bae4cfa7b6a73bbe014dc8820a19c80c842b21e"
+    "sourceHash": "v1-d70b5e797dd15dca67e7d24884e3dd2f37f40a8b61210321d332e95d57fca360",
+    "sourceCommit": "db27387ed3ef7ec4805d465f7964a7f65f937006"
   }
 }
